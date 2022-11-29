@@ -4,7 +4,7 @@ import './App.css';
   
 const Stack = () => {
     const numberToPushRef = useRef(0);
-    const [{ push, pop, peek, length }, 
+    const [list, { push, pop, peek, length }, 
         listInReverse] = useStackState([]);
   
 const addToStack = () => {
