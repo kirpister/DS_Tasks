@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-function App() {
+import Nav from './Nav';
+import Stack from './Stack';
+import Queue from './Queue';
+import Home from './Home';
+import Palindrome from './Palindrome';
+import Bubble from './Bubble';
+import Footer from './Footer';
+  
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    
+    <Nav />
+   
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/bubble" element={<Bubble />} />
+      <Route path="/stack" element={<Stack />} /> 
+      <Route path="/queue" element={<Queue />} />
+      <Route path="palindrome" element={<Palindrome />}/>
+    </Routes>
+    <Footer />
+    </BrowserRouter>
+
   );
 }
 
